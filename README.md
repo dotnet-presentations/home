@@ -1,7 +1,7 @@
 # .NET Presentations
 
 ## Decks
-### [What is .NET?](https://github.com/dotnet-presentations/home/WhatIsdotNET) 
+### [What is .NET?](https://github.com/dotnet-presentations/home/tree/master/WhatIsdotNET) 
 Level 100 Beginner 45min presentation on what .NET is and how to get started. 
 
 ## Workshops
