@@ -1,0 +1,31 @@
+﻿
+@{
+    ViewData["Title"] = "Login";
+}
+
+<div class="hero-unit">
+    <h1>Select your access badge</h1>
+</div>
+
+<div class="row">
+    <div class="col-md-3">
+        <a asp-controller="Account" asp-action="SelectUser" asp-route-returnurl="@ViewData["ReturnUrl"]" asp-route-user="barry" asp-route-issuer="@AuthorizationPolicies.Issuer.Microsoft">
+            <img src="~/images/barry.png" alt="Barry" title="Barry" />
+        </a>
+    </div>
+    <div class="col-md-3">
+        <a asp-controller="Account" asp-action="SelectUser" asp-route-returnurl="@ViewData["ReturnUrl"]" asp-route-user="barry" asp-route-issuer="@AuthorizationPolicies.Issuer.Microsoft" asp-route-temporaryBadge = "true">
+            <img src="~/images/temp.png" alt="Barry has forgotten his badge again" title="Barry has forgotten his badge again" />
+        </a>
+    </div>
+    <div class="col-md-3">
+        <a asp-controller="Account" asp-action="SelectUser" asp-route-returnurl="@ViewData["ReturnUrl"]" asp-route-user="andrew" asp-route-issuer="@AuthorizationPolicies.Issuer.Contoso">
+            <img src="~/images/andrew.png" alt="Andrew" title="Andrew" />
+        </a>
+    </div>
+    <div class="col-md-3">
+        <a asp-controller="Account" asp-action="SelectUser" asp-route-returnurl="@ViewData["ReturnUrl"]" asp-route-user="david" asp-route-issuer="@AuthorizationPolicies.Issuer.Microsoft">
+            <img src="~/images/david.png" alt="David" title="David" />
+        </a>
+    </div>
+</div>

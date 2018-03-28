@@ -1,0 +1,37 @@
+﻿@{
+    ViewData["Title"] = "Welcome to Microsoft";
+}
+
+<div class="hero-unit">
+    <h1>Welcome to Microsoft</h1>
+</div>
+
+<div class="row">
+    <div class="col-md-4 text-center">
+        <h2>🏢</h2>
+        <p>Building 18</p>
+    </div>
+    <div class="col-md-4 text-center">
+        <h2>🏢</h2>
+        <p>Building 25</p>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-4">&nbsp;</div>
+</div>
+<div class="row">
+    <div class="col-md-4 text-center">
+        <form action="/Building/Room" method="get">
+            <input type="hidden" name="building" value="18">
+            <input type="hidden" name="room" value="2300FL">
+            <input type="submit" class="btn btn-primary" value="18/2300FL">
+        </form>
+    </div>
+    <div class="col-md-4 text-center">
+        <form action="/Building/Room" method="get">
+            <input type="hidden" name="building" value="27">
+            <input type="hidden" name="room" value="1820A">
+            <input type="submit" class="btn btn-warning" value="27S/1820A">
+        </form>
+    </div>
+</div>
