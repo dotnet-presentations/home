@@ -1,3 +1,5 @@
+## Work in progress
+
 1. Getting Started (10 minutes)
     1. Tools overview by instructor(2 minutes)
         1. CLI
