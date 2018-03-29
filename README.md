@@ -1,4 +1,4 @@
-# .NET Presentations: Events In A Box
+# .NET Presentations
 
 ## Decks
 ### [What is .NET?](https://github.com/dotnet-presentations/home/tree/master/WhatIsdotNET) 
