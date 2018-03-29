@@ -1,5 +1,5 @@
 ## Available Security Presentations
-### [ASP.NET Core - Security and Identity](/ASP.NET%20Core%202.0)
+### [ASP.NET Core - Security and Identity](https://github.com/dotnet-presentations/home/tree/master/Security/ASP.NET%20Core%202.0)
 *(1 hour)* Overview of Security and Identity in ASP.NET Core 2.0, including Authorization Policies, Cookie Auth, and TOTP. Demos included.
 
 ## Available Security Workshops
