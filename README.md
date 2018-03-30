@@ -1,7 +1,7 @@
 # .NET Presentations
 
 ## Decks
-### [What is .NET?](https://github.com/dotnet-presentations/home/tree/master/WhatIsdotNET) 
+### [What is .NET?](https://github.com/dotnet-presentations/home/tree/master/.NET%20Intro) 
 Level 100 Beginner 45min presentation on what .NET is and how to get started. 
 
 ### [ASP.NET Core - Security and Identity](https://github.com/dotnet-presentations/home/tree/master/Security/ASP.NET%20Core%202.0)
