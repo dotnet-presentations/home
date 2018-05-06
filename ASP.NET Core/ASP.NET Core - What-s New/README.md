@@ -151,20 +151,39 @@ This workshop is a 75-90 minute introduction to ASP.NET Core 2.1. It begins with
         
         > Note: You can read more about Improvements for using HTTPS in [this blog post](https://blogs.msdn.microsoft.com/webdev/2018/02/27/asp-net-core-2-1-https-improvements/).
 
-3. GDPR
+3. Identity UI as a library
+    Previously, ASP.NET Core Identity included a lot of views (.cshtml files) in the `Pages/Account` directory for account management, as shown below. 
+    !IMAGE[ex3-identity-files.png](ex3-identity-files.png)
+    ASP.NET Core 2.1 includes these views in the ASP.NET Core Identity NuGet package, so these views are not required in your project unless you want to customize them. Additionally, this makes it easy to add ASP.NET Identity to your project after project creation.
+
+    1. Right-click on the project and select **Add** / **New Scaffolded Item...** / **Identity** and click the **Add** button. !IMAGE[ex3-add-scaffolded-item-identity.png](ex3-add-scaffolded-item-identity.png)
+
+    2. Note that the **Add Identity** dialog allows you to customize the layout page and to select specific files to override. !IMAGE[ex3-add-identity-dialog.png](ex3-add-identity-dialog.png)
+        >Note: There were some bugs with this feature in the version that shipped with this release we're using for the lab at Build, so leave the checkboxes unchecked. The latest release of Visual Studio and ASP.NET Core 2.1 has corrected these issues.
+
+    3. Click the **+** button next to the **Data context class** field, change the class name to `IdentityContext` (leaving the namespace) as shown below, and click the **Add** button.
+    !IMAGE[ex3-adding-identity-context.png](ex3-adding-identity-context.png)
+    4. Run the project and note the **Register** and **Login** links in the header.
+
+4. Features supporting GDPR compliance
 
     ASP.NET Core 2.1 includes several features to help you build GDPR compliant web applications. These include HTTPS, Cookie Consent, and Data Control. HTTPS features have been described in the previous section. In this section, we will look at cookie consent and data control features.
-    1. Run the application and notice the cookie consent dialog at the top of each page.!IMAGE[ex3-cookie-consent-prompt.png](ex3-cookie-consent-prompt.png)
+    1. Cookie Consent
+        1. Run the application and notice the cookie consent dialog at the top of each page.!IMAGE[ex3-cookie-consent-prompt.png](ex3-cookie-consent-prompt.png)
+        This feature allows you to prompt a user to consent to your application creating “non-essential” cookies. Your application should have a privacy policy and an explanation of what the user is consenting to that conforms to your GDPR requirements. By default, clicking “Learn more” will navigate the user to /Privacy where you could publish the details about your app. This system allows you to write cookie-related code that respects your user's cookie consent choices and the GDPR by specifying whether a cookie is essential (will always be written) or not essential (will only be written if the user has accepted cookies via the cookie consent dialog). The following syntax is used:
 
+            ```C#
+            context.Response.Cookies.Append("Test", "Value", new CookieOptions { IsEssential = false });
+            ```
+        2. Open the file `Pages\Shared\_CookieConsentPartial.cshtml` to view the cookie consent dialog content. You will use this to modify any links to privacy policy, etc.
+    2. Data Controls
+        1. The GDPR gives users the right to examine the data your application holds on it, edit the data and delete the data entirely from your application. Obviously, we cannot know what data you have, where it lives or how its all linked together but what we do know is what personal data a default ASP.NET Core Identity application holds and how to delete Identity users, so we can give you a starting point. When you create an ASP.NET Core application with Individual Authentication and the data stored in-app you might notice two new options in the user profile page, Download and Delete. 
+        !IMAGE[ex3-data-controls.png](ex3-data-controls.png)
+
+        2. It's best to minimize the individual user data you store in your web applications, but if you have to store personal information about a user it's likely best to do this by storing claims to the application user in ASP.NET Identity. This will automatically be handled by the above data download and deletion features in ASP.NET Core 2.1. 
         > Note: You can read more about GDPR Enhancements in ASP.NET Core 2.1 in [this blog post](https://blogs.msdn.microsoft.com/webdev/2018/03/04/asp-net-core-2-1-0-preview1-gdpr-enhancements/).
-
-4. Identity UI as a library
-5. Web API
-6. HttpClientFactory
 
 <a name="Exercise4" ></a>
 ### Exercise 4: Building Real-time ASP.NET Core applications with SignalR ###
 
-(20 minutes)
-1. Intro - https://blogs.msdn.microsoft.com/webdev/2018/02/27/asp-net-core-2-1-0-preview1-getting-started-with-signalr/
-2. Advanced - https://github.com/aspnet/SignalR/tree/dev/samples
+(20 minutes) If you have time available, complete this [Getting Started With SignalR](https://blogs.msdn.microsoft.com/webdev/2018/02/27/asp-net-core-2-1-0-preview1-getting-started-with-signalr/) tutorial.
