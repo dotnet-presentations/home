@@ -191,7 +191,7 @@ In this section, you will learn about some of the top new features for ASP.NET C
 4. Identity UI as a library
     Previously, ASP.NET Core Identity included a lot of views (.cshtml files) in the `Pages/Account` directory for account management, as shown below. 
 
-        ![ex3-identity-files.png](images/ex3-identity-files.png)
+    ![ex3-identity-files.png](images/ex3-identity-files.png)
     
     ASP.NET Core 2.1 includes these views in the ASP.NET Core Identity NuGet package, so these views are not required in your project unless you want to customize them. Additionally, this makes it easy to add ASP.NET Identity to your project after project creation.
 
