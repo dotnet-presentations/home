@@ -6,7 +6,7 @@
 
 Level 100 Beginner 45min presentation on what .NET is and how to get started.
 
-###[.NET Today and Tomorow](https://github.com/dotnet-presentations/home/tree/master/.NET%20Keynote)
+### [.NET Today and Tomorow](https://github.com/dotnet-presentations/home/tree/master/.NET%20Keynote)
 
 Overview of the .NET platform, open source ecosystem, features in the latest releases, and the future roadmap of .NET Core 3. 
 
