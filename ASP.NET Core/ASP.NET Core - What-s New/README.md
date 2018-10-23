@@ -311,45 +311,45 @@ In this section, you will learn about some of the top new features for ASP.NET C
 
 2. Extra extra credit: Call the GitHub API from a `BackgroundService` and pass updates (such as repo follower count) to the UI using a SignalR hub. You can use the following code as a start:
 
-        ```C#
-        using GitHubSignalR;
-        using Microsoft.AspNetCore.SignalR;
-        using Microsoft.Extensions.Hosting;
-        using System;
-        using System.Threading;
-        using System.Threading.Tasks;
+    ```C#
+    using GitHubSignalR;
+    using Microsoft.AspNetCore.SignalR;
+    using Microsoft.Extensions.Hosting;
+    using System;
+    using System.Threading;
+    using System.Threading.Tasks;
 
-        public class GitHubStatsService : BackgroundService
+    public class GitHubStatsService : BackgroundService
+    {
+        private readonly IHubContext<GitHubStatsHub> _hubContext;
+        private readonly TimeSpan _delay = TimeSpan.FromSeconds(30);
+        private GitHubService _ghService;
+
+        public GitHubStatsService(
+        IHubContext<GitHubStatsHub> hubContext,
+        GitHubService gitHubService)
         {
-            private readonly IHubContext<GitHubStatsHub> _hubContext;
-            private readonly TimeSpan _delay = TimeSpan.FromSeconds(30);
-            private GitHubService _ghService;
+            _hubContext = hubContext;
+            _ghService = gitHubService;
+        }
 
-            public GitHubStatsService(
-            IHubContext<GitHubStatsHub> hubContext,
-            GitHubService gitHubService)
+        protected override async Task ExecuteAsync(CancellationToken stoppingToken)
+        {
+            while (!stoppingToken.IsCancellationRequested)
             {
-                _hubContext = hubContext;
-                _ghService = gitHubService;
-            }
-
-            protected override async Task ExecuteAsync(CancellationToken stoppingToken)
-            {
-                while (!stoppingToken.IsCancellationRequested)
-                {
-                    int followers = await GetFollowerCount();
-                    await _hubContext.Clients.All.SendAsync("followersUpdated", followers);
-                    await Task.Delay(_delay, stoppingToken);
-                }
-            }
-
-            private async Task<int> GetFollowerCount()
-            {
-                var result = await _ghService.Client.GetStringAsync("/repos/aspnet/Home/");
-
-                //TODO: Parse JSON data
-
-                return 0;
+                int followers = await GetFollowerCount();
+                await _hubContext.Clients.All.SendAsync("followersUpdated", followers);
+                await Task.Delay(_delay, stoppingToken);
             }
         }
-        ```
+
+        private async Task<int> GetFollowerCount()
+        {
+            var result = await _ghService.Client.GetStringAsync("/repos/aspnet/Home/");
+
+            //TODO: Parse JSON data
+
+            return 0;
+        }
+    }
+    ```
