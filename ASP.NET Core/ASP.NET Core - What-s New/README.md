@@ -310,15 +310,9 @@ In this section, you will learn about some of the top new features for ASP.NET C
 <a name="Exercise4" ></a>
 ### Exercise 4: Building Real-time ASP.NET Core applications with SignalR ###
 
-1. If you have time available, complete this [Getting Started With SignalR](https://blogs.msdn.microsoft.com/webdev/2018/02/27/asp-net-core-2-1-0-preview1-getting-started-with-signalr/) tutorial.
+1. If you have time available, complete this [Getting Started With SignalR](https://docs.microsoft.com/en-us/aspnet/core/tutorials/signalr?view=aspnetcore-2.1&tabs=visual-studio#add-signalr-client-code) tutorial.
 
-    >Note: Rather than installing the SignalR client side library using NPM, you can use this CDN reference:
-
-    ```HTML
-    <script src="https://unpkg.com/@@aspnet/signalr@1.0.0-preview2-final/dist/browser/signalr.min.js"></script>`
-    ```
-
-  2. Extra extra credit: Call the GitHub API from a `BackgroundService` and pass updates (such as repo follower count) to the UI using a SignalR hub. You can use the following code as a start:
+2. Extra extra credit: Call the GitHub API from a `BackgroundService` and pass updates (such as repo follower count) to the UI using a SignalR hub. You can use the following code as a start:
 
         ```C#
         using GitHubSignalR;
