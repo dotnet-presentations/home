@@ -16,12 +16,9 @@ This workshop is a 75-90 minute introduction to ASP.NET Core 2.1. It begins with
     * Exploring an advanced SignalR Sample Application
 
 ## Prerequisites
-  1. .NET Core SDK (version 2.1.300-preview1 or higher) [[download](https://www.microsoft.com/net/download)]
+  1. .NET Core SDK (version 2.1 - latest released SDK) [[download](https://www.microsoft.com/net/download)]
   2. Visual Studio *or* Visual Studio Code (latest public release) [[download](https://www.visualstudio.com/)] 
-
-## Setup
->  Note: For BUILD Instructor Led Labs, all setup steps have been completed on the lab virtual machine.
-
+  
 ---
 
 ## Exercises
@@ -44,7 +41,7 @@ This workshop is a 75-90 minute introduction to ASP.NET Core 2.1. It begins with
 2. File / New Project
     1. Open Visual Studio 2017 and select File / New Project from the menu.
     ![ex1-new-project.png](images/ex1-new-project.png)
-    2. Select **Visual C#** / **.NET Core** / **ASP.NET Core Web Application** as the project type. Pick a name for the application (e.g. *Build2018*) and press **OK**.
+    2. Select **Visual C#** / **.NET Core** / **ASP.NET Core Web Application** as the project type. Pick a name for the application (e.g. *AspNet21WhatsNew*) and press **OK**.
     ![ex1-name-the-project.png](images/ex1-name-the-project.png)
     3. Ensure **ASP.NET Core 2.1** is selected at the top of the project options dialog. Select **Web Application**. 
     ![ex1-project-options.png](images/ex1-project-options.png)
@@ -99,7 +96,7 @@ This workshop is a 75-90 minute introduction to ASP.NET Core 2.1. It begins with
   4. Add a `string Message` property to the `CurrentTime.cshtml.cs` class and initilize it show the current time as shown in the code block below, then save the file:
 
         ```C#
-        namespace Build2018.Pages
+        namespace AspNet21WhatsNew.Pages
         {
             public class CurrentTimeModel : PageModel
             {
@@ -129,7 +126,7 @@ This workshop is a 75-90 minute introduction to ASP.NET Core 2.1. It begins with
     2. Add an `int ID`, `string Name`, and `string GitHubPage` property to the class as shown below:
 
         ```C#
-        namespace Build2018
+        namespace AspNet21WhatsNew
         {
             public class GitHubProject
             {
@@ -224,7 +221,7 @@ In this section, you will learn about some of the top new features for ASP.NET C
     3. Replace the code in `NamedClient.cshtml.cs` with the following:
 
         ```C#
-        namespace Build2018.Pages
+        namespace AspNet21WhatsNew.Pages
         {
             public class NamedClientModel : PageModel
             {
@@ -284,7 +281,7 @@ In this section, you will learn about some of the top new features for ASP.NET C
         using System.Threading.Tasks;
         using Microsoft.AspNetCore.Mvc.RazorPages;
 
-        namespace Build2018.Pages
+        namespace AspNet21WhatsNew.Pages
         {
             public class TypedClientModel : PageModel
             {
