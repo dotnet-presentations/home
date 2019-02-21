@@ -14,6 +14,10 @@ Overview of the .NET platform, open source ecosystem, features in the latest rel
 
 Overview of Security and Identity in ASP.NET Core 2.0, including Authorization Policies, Cookie Auth, and TOTP. Demos included.
 
+### [.NET Web Apps to Azure - Strategies and Case Studies](https://github.com/dotnet-presentations/home/tree/master/Azure%20Migration)
+
+Migration and modernization strategies and case studies for bring your .NET apps to Azure and .NET Core.
+
 ## Workshops
 
 ### [ASP.NET Core For Beginners](https://github.com/dotnet-presentations/aspnetcore-for-beginners)
