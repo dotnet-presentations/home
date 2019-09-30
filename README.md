@@ -18,6 +18,10 @@ Overview of Security and Identity in ASP.NET Core 2.0, including Authorization P
 
 Migration and modernization strategies and case studies for bring your .NET apps to Azure and .NET Core.
 
+### [What to Expect When You Are Expecting ASP.NET Core 3](https://github.com/dotnet-presentations/home/tree/master/ASP.NET%20Core%203)
+
+Overview of ASP.NET Core 3, showcasing new features of ASP.NET Core 3.
+
 ## Workshops
 
 ### [ASP.NET Core For Beginners](https://github.com/dotnet-presentations/aspnetcore-for-beginners)
